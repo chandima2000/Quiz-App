@@ -72,6 +72,7 @@ public class QuestionService {
 
             wrappers.add(wrapper);
         }
+        return new ResponseEntity<>(wrappers,HttpStatus.OK);
 
     }
 
