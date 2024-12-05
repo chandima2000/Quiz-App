@@ -21,6 +21,7 @@ public class QuizService {
     @Autowired
     private QuizRepo quizRepo;
 
+    @Autowired
     private QuizInterface quizInterface;
 
     public ResponseEntity<String> createQuiz(String category, int numQ, String title) {
