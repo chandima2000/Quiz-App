@@ -3,6 +3,7 @@ package org.chandima.quizservice.controller;
 
 
 import org.chandima.quizservice.model.QuestionWrapper;
+import org.chandima.quizservice.model.QuizDto;
 import org.chandima.quizservice.model.UserResponse;
 import org.chandima.quizservice.service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +21,9 @@ public class QuizController {
 
 
     @PostMapping("create")
-    public ResponseEntity<String> createQuiz(@RequestParam String category, @RequestParam int numQ, @RequestParam String title){
+    public ResponseEntity<String> createQuiz(@RequestBody QuizDto quizDto){
 
-        return  quizService.createQuiz(category, numQ, title);
+        return  quizService.createQuiz(quizDto.getCategoryName(), quizDto.getNumQuestions(), quizDto.getTitle());
     }
 
     @GetMapping("get/{id}")
